@@ -172,11 +172,12 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--brand-700);borde
   .cta__wrapper{flex-direction:column;align-items:flex-start}
 }
 @media (max-width: 768px){
+  .topbar{backdrop-filter:none;-webkit-backdrop-filter:none}
   .navbar__toggle{display:inline-flex}
   .oab{display:none}
   .topbar__right .link{display:none}
   .topbar__right .btn--primary{display:none}
-  .navbar__menu{display:none;flex-direction:column;gap:18px;position:fixed;inset:0;background:#ffffff;padding:96px 24px 24px;z-index:1000;overflow:auto}
+  .navbar__menu{display:none;flex-direction:column;gap:18px;position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;max-width:none;background:#ffffff;padding:96px 24px 24px;z-index:2147483000;overflow:auto}
   .navbar__menu.open{display:flex}
   .navbar__menu li a{font-size:1.25rem;font-weight:800}
   body.no-scroll{overflow:hidden}
