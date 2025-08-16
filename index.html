@@ -67,18 +67,24 @@
     <header class="topbar">
         <div class="container topbar__wrapper">
             <div class="topbar__left">
-                <img src="assets/logo.svg?v=2" alt="Logotipo Sobrenome & Sobrenome" class="logo">
+                <div class="brand" aria-label="Advocacia Estratégica">
+                    <img class="brand__icon" src="assets/favicon.svg?v=2" alt="A">
+                    <div class="brand__text">
+                        <strong>Advocacia</strong>
+                        <span>Estratégica</span>
+                    </div>
+                </div>
                 <span class="oab">OAB • Atuação Nacional</span>
             </div>
             <div class="topbar__right">
                 <a class="link" href="tel:+5511999999999">+55 11 99999-9999</a>
                 <a class="btn btn--whatsapp" href="https://wa.me/5511999999999?text=Olá%2C+gostaria+de+agendar+uma+consulta" target="_blank" rel="noopener">WhatsApp</a>
                 <a class="btn btn--primary" href="#contato">Agendar consulta</a>
+                <button id="menuToggle" class="navbar__toggle" aria-expanded="false" aria-controls="menu">Menu</button>
             </div>
         </div>
         <nav class="navbar" aria-label="Navegação principal">
             <div class="container navbar__wrapper">
-                <button id="menuToggle" class="navbar__toggle" aria-expanded="false" aria-controls="menu">Menu</button>
                 <ul id="menu" class="navbar__menu">
                     <li><a href="#atuacao">Atuação</a></li>
                     <li><a href="#sobre">Sobre</a></li>
