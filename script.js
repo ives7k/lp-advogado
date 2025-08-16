@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Menu
   const toggle = document.getElementById('menuToggle');
   const menu = document.getElementById('menu');
+  const menuClose = document.getElementById('menuClose');
   if (toggle && menu) {
     const closeMenu = () => {
       menu.classList.remove('open');
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.addEventListener('click', (e) => {
       if (e.target.tagName === 'A') closeMenu();
     });
+    if (menuClose) {
+      menuClose.addEventListener('click', closeMenu);
+    }
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) closeMenu();
     });

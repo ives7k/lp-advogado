@@ -64,6 +64,13 @@ input,select,textarea,button{font-size:16px}
 .navbar__menu a{color:#111827;font-weight:500}
 .navbar__menu a{display:block;padding:12px 6px}
 
+/* Botão fechar menu (mobile overlay) */
+.menu__close{display:none;position:fixed;top:14px;right:14px;width:44px;height:44px;border:1px solid #d1d5db;background:#fff;border-radius:10px;z-index:2147483646}
+.menu__close .x{display:inline-block;width:22px;height:22px;position:relative}
+.menu__close .x span{position:absolute;left:0;right:0;top:10px;height:2px;background:#111;border-radius:2px}
+.menu__close .x span:first-child{transform:rotate(45deg)}
+.menu__close .x span:last-child{transform:rotate(-45deg)}
+
 /* Hero */
 .hero{background:linear-gradient(180deg, var(--bg), #0e1016); color:var(--text); padding:56px 0 32px}
 .hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:stretch}
@@ -76,7 +83,9 @@ input,select,textarea,button{font-size:16px}
 .badge__num{font-weight:800;color:#fff}
 .hero__ctas{display:flex;gap:12px;flex-wrap:wrap}
 .hero__trust{margin-top:18px;color:#c7ccda}
-.hero__trust ul{display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 0;padding:0;list-style:none}
+.hero__trust ul{display:grid;grid-template-columns:repeat(2, auto);gap:8px 18px;margin:8px 0 0;padding:0;list-style:none}
+.hero__trust li{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.hero__trust li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 2px rgba(196,162,105,.25)}
 
 .card{background:var(--surface);border:1px solid #232833;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
 .card__title{margin:0 0 10px;color:#fff}
@@ -182,11 +191,13 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--brand-700);borde
   .navbar__menu{display:none;flex-direction:column;gap:18px;position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;max-width:none;background:#ffffff;padding:96px 24px 24px;z-index:2147483000;overflow:auto}
   .navbar__menu.open{display:flex}
   .navbar__menu li a{font-size:1.25rem;font-weight:800}
+  .menu__close{display:inline-flex}
   body.no-scroll{overflow:hidden}
   .testimonials,.articles,.cards,.stats{grid-template-columns:1fr}
   .hero{padding:36px 0 20px}
   .hero h1{font-size:28px}
   .subtitle{font-size:1rem}
+  .hero__trust ul{grid-template-columns:1fr}
   .hero__ctas .btn{width:100%}
   .card{padding:14px}
   .hero__form{margin-top:6px}
