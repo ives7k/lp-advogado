@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target.tagName === 'A') closeMenu();
     });
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 640) closeMenu();
+      if (window.innerWidth > 768) closeMenu();
     });
   }
 
