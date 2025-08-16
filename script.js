@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
       menu.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('no-scroll');
-      toggle.textContent = 'Menu';
+      toggle.classList.remove('is-open');
     };
     const openMenu = () => {
       menu.classList.add('open');
       toggle.setAttribute('aria-expanded', 'true');
       document.body.classList.add('no-scroll');
-      toggle.textContent = 'Fechar';
+      toggle.classList.add('is-open');
     };
     toggle.addEventListener('click', () => {
       const isOpen = menu.classList.contains('open');
