@@ -6,9 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('menuToggle');
   const menu = document.getElementById('menu');
   if (toggle && menu) {
+    const closeMenu = () => {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('no-scroll');
+      toggle.textContent = 'Menu';
+    };
+    const openMenu = () => {
+      menu.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('no-scroll');
+      toggle.textContent = 'Fechar';
+    };
     toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
+      const isOpen = menu.classList.contains('open');
+      isOpen ? closeMenu() : openMenu();
+    });
+    menu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') closeMenu();
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 640) closeMenu();
     });
   }
 
